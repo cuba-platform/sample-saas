@@ -17,7 +17,7 @@ Let’s suppose that our CUBA application should be used by several clients:
 
 Open the project in CUBA Studio, execute *Run > Create database*, then *Run > Start application server* and open the application at `http://localhost:8080/app`.
 
- 1. Log in as `admin` / `admin`. This account gives the full access to the application and does not belong to any client.
+ * Log in as `admin` / `admin`. This account gives the full access to the application and does not belong to any client.
 
     First, open the *Administration > Access Group* screen.
 
@@ -27,11 +27,11 @@ Open the project in CUBA Studio, execute *Run > Create database*, then *Run > St
 
     The `admin` user can create only `PaymentType` entities shared between clients. If you try to create a client-specific entity like `Customer`, you will get an exception.
 
-2. Log in as `stark` / `1`. This is an admin of the `Stark Industries` client. You can create customers and orders, as well as create users for your client and assign the roles `client_admin` or `client_user` to them.
+* Log in as `stark` / `1`. This is an admin of the `Stark Industries` client. You can create customers and orders, as well as create users for your client and assign the roles `client_admin` or `client_user` to them.
 
-3. Log in as `potts` / `1`. This is a user of the `Stark Industries` client. You can see and manage the customers and orders created by `stark`, but you cannot create new users.
+* Log in as `potts` / `1`. This is a user of the `Stark Industries` client. You can see and manage the customers and orders created by `stark`, but you cannot create new users.
 
-4. Log in as `dent` / `1`. This is an admin of the `Sirius Cybernetics Corp.` client. You can create users, customers and orders, but you don't see entities created by the `Stark Industries` users.
+* Log in as `dent` / `1`. This is an admin of the `Sirius Cybernetics Corp.` client. You can create users, customers and orders, but you don't see entities created by the `Stark Industries` users.
 
 ## Implementation Details
 
