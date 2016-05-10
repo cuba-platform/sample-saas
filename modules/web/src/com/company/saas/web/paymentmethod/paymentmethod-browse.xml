@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.saas.web.paymentmethod.PaymentMethodBrowse"
+        focusComponent="paymentMethodsTable"
+        lookupComponent="paymentMethodsTable"
+        messagesPack="com.company.saas.web.paymentmethod">
+    <dsContext>
+        <collectionDatasource id="paymentMethodsDs"
+                              class="com.company.saas.entity.PaymentMethod"
+                              view="_local">
+            <query>
+                <![CDATA[select e from saas$PaymentMethod e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout spacing="true">
+        <table id="paymentMethodsTable"
+               height="100%"
+               width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="description"/>
+            </columns>
+            <rows datasource="paymentMethodsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="paymentMethodsTable.create"/>
+                <button id="editBtn"
+                        action="paymentMethodsTable.edit"/>
+                <button id="removeBtn"
+                        action="paymentMethodsTable.remove"/>
+                <button id="refreshBtn"
+                        action="paymentMethodsTable.refresh"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

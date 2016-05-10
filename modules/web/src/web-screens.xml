@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/screens.xml"/>
+    <screen id="saas$Customer.browse"
+            template="com/company/saas/web/customer/customer-browse.xml"/>
+    <screen id="saas$Customer.edit"
+            template="com/company/saas/web/customer/customer-edit.xml"/>
+    <screen id="saas$PaymentMethod.browse"
+            template="com/company/saas/web/paymentmethod/paymentmethod-browse.xml"/>
+    <screen id="saas$PaymentMethod.edit"
+            template="com/company/saas/web/paymentmethod/paymentmethod-edit.xml"/>
+    <screen id="saas$Order.browse"
+            template="com/company/saas/web/order/order-browse.xml"/>
+    <screen id="saas$Order.edit"
+            template="com/company/saas/web/order/order-edit.xml"/>
+</screen-config>

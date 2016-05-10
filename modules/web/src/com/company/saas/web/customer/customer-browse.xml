@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.saas.web.customer.CustomerBrowse"
+        focusComponent="customersTable"
+        lookupComponent="customersTable"
+        messagesPack="com.company.saas.web.customer">
+    <dsContext>
+        <collectionDatasource id="customersDs"
+                              class="com.company.saas.entity.Customer"
+                              view="_local">
+            <query>
+                <![CDATA[select e from saas$Customer e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="customersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="customersTable"
+                datasource="customersDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="customersTable"
+               width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="client"/>
+                <column id="name"/>
+            </columns>
+            <rows datasource="customersDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="customersTable.create"/>
+                <button id="editBtn"
+                        action="customersTable.edit"/>
+                <button id="removeBtn"
+                        action="customersTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

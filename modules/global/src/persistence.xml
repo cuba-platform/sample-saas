@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="saas"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.company.saas.entity.PaymentMethod</class>
+        <class>com.company.saas.entity.StandardClientEntity</class>
+        <class>com.company.saas.entity.Customer</class>
+        <class>com.company.saas.entity.Order</class>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.saas.web.paymentmethod.PaymentMethodEdit"
+        datasource="paymentMethodDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.saas.web.paymentmethod">
+    <dsContext>
+        <datasource id="paymentMethodDs"
+                    class="com.company.saas.entity.PaymentMethod"
+                    view="_local"/>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="paymentMethodDs">
+            <column width="200px">
+                <field id="name"/>
+                <field id="description"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.saas.web.order.OrderEdit"
+        datasource="orderDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.saas.web.order">
+    <dsContext>
+        <datasource id="orderDs"
+                    class="com.company.saas.entity.Order"
+                    view="order-view"/>
+        <collectionDatasource id="paymentMethodsDs"
+                              class="com.company.saas.entity.PaymentMethod"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from saas$PaymentMethod e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="orderDs">
+            <column width="200px">
+                <field id="client"
+                       editable="false"/>
+                <field id="num"/>
+                <field id="date"/>
+                <field id="customer"/>
+                <field id="paymentMethod"
+                       optionsDatasource="paymentMethodsDs"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>
