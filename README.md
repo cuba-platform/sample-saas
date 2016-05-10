@@ -9,7 +9,7 @@ Let’s suppose that our CUBA application should be used by several clients:
   * Shared entities that are available for all clients (typically they represent some reference data). In this project, it is the `PaymentMethod `entity.
   * Client entities - their instances belong to one certain client. In this project, these are `Customer` and `Order` entities.
 * Client's users can see only their client entities.
-* There are predefined set of client's user roles:
+* There is a predefined set of client's user roles:
   * Admins can create users within their client and assign available roles to them. Admins do not see other clients and their users.
   * Regular users can only work with data.
 
