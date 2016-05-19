@@ -5,19 +5,20 @@ This project demonstrates an approach to the creation of a multi-tenant [CUBA](h
 ## Objective
 
 Let’s suppose that our CUBA application should be used by several clients:
+
 * There are two types of entities in the application:
-  * Shared entities that are available for all clients (typically they represent some reference data). In this project, it is the `PaymentMethod `entity.
-  * Client entities - their instances belong to one certain client. In this project, these are `Customer` and `Order` entities.
+    * Shared entities that are available for all clients (typically they represent some reference data). In this project, it is the `PaymentMethod `entity.
+    * Client entities - their instances belong to one certain client. In this project, these are `Customer` and `Order` entities.
 * Client's users can see only their client entities.
 * There is a predefined set of client's user roles:
-  * Admins can create users within their client and assign available roles to them. Admins do not see other clients and their users.
-  * Regular users can only work with data.
+    * Admins can create users within their client and assign available roles to them. Admins do not see other clients and their users.
+    * Regular users can only work with data.
 
 ## Solution
 
 Open the project in CUBA Studio, execute *Run > Create database*, then *Run > Start application server* and open the application at `http://localhost:8080/app`.
 
- * Log in as `admin` / `admin`. This account gives the full access to the application and does not belong to any client.
+* Log in as `admin` / `admin`. This account gives the full access to the application and does not belong to any client.
 
     First, open the *Administration > Access Group* screen.
 
