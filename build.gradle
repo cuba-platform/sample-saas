@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '6.2.5'
+    ext.cubaVersion = '6.3.2'
     repositories {
         maven {
             url 'https://repo.cuba-platform.com/content/groups/work'
@@ -13,6 +13,7 @@ buildscript {
     }
     dependencies {
         classpath "com.haulmont.gradle:cuba-plugin:$cubaVersion"
+        classpath "com.haulmont.cuba:cuba-global:$cubaVersion"
     }
 }
 
@@ -69,7 +70,6 @@ configure([globalModule, coreModule, guiModule, webModule]) {
 
 configure(globalModule) {
     dependencies {
-        compile("com.haulmont.cuba:cuba-global:$cubaVersion")
 
     }
 
@@ -89,10 +89,6 @@ configure(coreModule) {
         provided(servletApi)
         jdbc(hsql)
         testRuntime(hsql)
-        compile("com.haulmont.cuba:cuba-core:$cubaVersion")
-        testCompile("com.haulmont.cuba:cuba-core-tests:$cubaVersion")
-        testCompile("com.haulmont.cuba:cuba-shared-lib:$cubaVersion")
-        dbscripts("com.haulmont.cuba:cuba-core:$cubaVersion:db@zip")
 
     }
 
@@ -107,8 +103,7 @@ configure(coreModule) {
 
     task deploy(dependsOn: [assemble, cleanConf], type: CubaDeployment) {
         appName = 'app-core'
-        appJars('cuba-core', 'cuba-global', 
-                'app-global', 'app-core')
+        appJars('app-global', 'app-core')
     }
 
     task createDb(dependsOn: assembleDbScripts, description: 'Creates local database', type: CubaDbCreation) {
@@ -133,8 +128,6 @@ configure(coreModule) {
 configure(guiModule) {
     dependencies {
         compile(globalModule)
-        compile("com.haulmont.cuba:cuba-gui:$cubaVersion")
-        testCompile("com.haulmont.cuba:cuba-client-tests:$cubaVersion")
 
     }
 
@@ -154,10 +147,6 @@ configure(webModule) {
     dependencies {
         provided(servletApi)
         compile(guiModule)
-        compile("com.haulmont.cuba:cuba-web:$cubaVersion")
-        webcontent("com.haulmont.cuba:cuba-web:$cubaVersion:web@zip")
-        webcontent("com.haulmont.cuba:cuba-web-toolkit:$cubaVersion:web@zip")
-        testCompile("com.haulmont.cuba:cuba-client-tests:$cubaVersion")
 
     }
 
@@ -192,8 +181,7 @@ configure(webModule) {
 
     task deploy(dependsOn: [assemble, cleanConf], type: CubaDeployment) {
         appName = 'app'
-        appJars('cuba-global', 'cuba-rest-api', 'cuba-web', 'cuba-client', 'cuba-gui', 
-                'app-global', 'app-gui', 'app-web')
+        appJars('app-global', 'app-gui', 'app-web')
     }
 }
 
