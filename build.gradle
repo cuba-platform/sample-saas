@@ -33,7 +33,7 @@ cuba {
         isSnapshot = true
     }
     tomcat {
-        dir = "$project.rootDir/build/tomcat"
+        dir = "$project.rootDir/deploy/tomcat"
     }
     ide {
         copyright = '''Copyright (c) ${today.year} ${project.name}''' // Copyright Notice for IDEA project
