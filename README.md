@@ -47,4 +47,4 @@ Open the project in CUBA Studio, execute *Run > Create database*, then *Run > St
 Based on CUBA Platform 6.9.1
 
 ## Issues
-Please use https://www.cuba-platform.com/discuss for discussion, support, and reporting problems about CUBA Studio.
+Please use https://www.cuba-platform.com/discuss for discussion, support, and reporting problems coressponding to this sample.
