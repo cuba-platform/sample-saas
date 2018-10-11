@@ -44,7 +44,7 @@ Open the project in CUBA Studio, execute *Run > Create database*, then *Run > St
 
 4. Due to the constraint for `sec$Role` entity assigned to the Clients group, client users see only roles with names starting with `client_`. That is they do not see `Administrators` and `Users` roles.
 
-Based on CUBA Platform 6.9.1
+Based on CUBA Platform 6.10.1
 
 ## Issues
 Please use https://www.cuba-platform.com/discuss for discussion, support, and reporting problems coressponding to this sample.
